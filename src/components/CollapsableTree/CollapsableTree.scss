@@ -1,0 +1,51 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.collapse-tree-wrapper {
+  font-size: 18px;
+  .btn-wrapper {
+    display: flex;
+    align-items: center;
+    button {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      color: inherit;
+      font-size: inherit;
+      padding: 15px;
+      background-color: transparent;
+      border: none;
+    }
+    a {
+      padding: 10px;
+    }
+  }
+  .collapse-item > a {
+    font-size: inherit;
+    color: inherit;
+    display: block;
+    padding: 15px;
+  }
+  > .collapsable-list {
+    // nested collapsable lists
+    .collapsable-list,
+    .collapsable-content {
+      padding-block: 0;
+      max-height: 0px;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding-block 0.5s ease;
+      &.show {
+        max-height: 1000px;
+        padding-block: 10px;
+      }
+    }
+    > .collapse-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      .collapse-item:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}

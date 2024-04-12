@@ -1,0 +1,94 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.popular-products-section {
+  background-color: $light-bg;
+
+  padding-block: 20px;
+  &__content-wrapper {
+    // styles goes here
+  }
+  &__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  &__controls-wrapper {
+    // styles goes here
+  }
+  &__action-btn {
+    background-color: transparent;
+    border: none;
+    transition: 0.3s color;
+    cursor: pointer;
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+  &__inner-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    @include xs {
+      justify-content: center;
+    }
+    @include lg {
+      flex-direction: row;
+    }
+  }
+  &__tabs-list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 10px;
+    background-color: $white-bg;
+    border-radius: 10px;
+    @include lg {
+      width: 220px;
+      gap: 0;
+      flex-direction: column;
+      align-self: start;
+    }
+  }
+  &__tab-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+  }
+  &__tab-img-wrapper {
+    font-size: 0; // to fix height of the wrapper
+  }
+  &__tab-img {
+    width: 70px;
+  }
+  &__tab-title {
+    // styles goes here
+  }
+  &__products-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+  }
+  &__banner-img-wrapper {
+    font-size: 0;
+    padding: 5px;
+  }
+  &__banner-img {
+    border-radius: 8px;
+    height: 100%;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.457);
+  }
+
+  &__carousel-wrapper {
+    flex: 1;
+    > * {
+      height: 100%;
+    }
+  }
+}

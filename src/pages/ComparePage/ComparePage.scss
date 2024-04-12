@@ -1,0 +1,36 @@
+@use '../../styles/variables' as *;
+.compare {
+  padding-block: 40px;
+  background-color: $light-bg;
+  &__content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  &__no-data {
+    text-align: center;
+    font-weight: bold;
+    color: indianred;
+  }
+  &__actions-wrapper {
+    margin-top: 10px;
+  }
+  &__clear-all-btn {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $secondary-text-color;
+    background-color: indianred;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s background-color, 0.3s color;
+    &:hover {
+      background-color: rgba(205, 92, 92, 0.888);
+    }
+  }
+}

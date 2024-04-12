@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+
+.wishlist {
+  padding-block: 50px;
+  background-color: $light-bg;
+  &__products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  &__empty {
+    color: indianred;
+    font-weight: 500;
+  }
+  &__clear-favorite-btn {
+    background-color: $main-color;
+    color: indianred;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin-inline: auto;
+    cursor: pointer;
+    
+    transition: 0.3s color , background-color;
+    
+    &:hover {
+      background-color: indianred;
+      color: $secondary-text-color;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@use '../../styles/variables' as *;
+.breadcrumb {
+  --gap: 0.5rem;
+  padding-block: 30px;
+  background-color: $white-bg;
+  display: flex;
+  gap: var(--gap);
+  justify-content: center;
+  &__link {
+    &,
+    &--active {
+      color: $main-color;
+      font-weight: bold;
+      font-size: 17px;
+      text-transform: capitalize;
+      &:not(:first-child)::before {
+        content: '>';
+        margin-inline-end: var(--gap);
+      }
+    }
+    &--active {
+      color: $yellow-color;
+    }
+  }
+}

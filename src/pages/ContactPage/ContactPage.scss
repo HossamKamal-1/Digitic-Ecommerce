@@ -1,0 +1,116 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.contact-page {
+  padding-block: 70px;
+  background-color: $light-bg;
+  &__map-wrapper {
+    margin-bottom: 40px;
+  }
+  &__contact-details-wrapper {
+    background-color: $white-bg;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 0px rgb(0 0 0 / 28%);
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    text-align: center;
+    @include md {
+      text-align: start;
+      flex-direction: row;
+    }
+  }
+  &__contact-form-wrapper {
+    flex: 1;
+  }
+  &__heading {
+    font-size: 27px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  &__contact-form {
+  }
+  &__input-group {
+    position: relative;
+  }
+  &__input-field {
+    margin-bottom: 20px;
+  }
+  &__comment-text-area {
+    margin-bottom: 20px;
+    resize: none;
+    height: 100px;
+  }
+  &__input-field,
+  &__comment-text-area {
+    border: none;
+    width: 100%;
+    border-radius: 4px;
+    padding: 14px;
+    background-color: $light-bg;
+    transition: 0.3s outline;
+  }
+  &__input-placeholder {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    color: rgba($color: $text-gray-color, $alpha: 0.8);
+    pointer-events: none;
+    transition: 0.1s;
+  }
+  &__input-field:focus,
+  &__comment-text-area:focus {
+    outline: 1px solid $yellow-color;
+  }
+
+  &__input-field:focus + &__input-placeholder,
+  &__comment-text-area:focus + &__input-placeholder,
+  &__input-field:not(:placeholder-shown) + &__input-placeholder,
+  &__comment-text-area:not(:placeholder-shown) + &__input-placeholder {
+    top: 2px;
+    font-size: 12px;
+  }
+
+  &__contact-btn {
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 18px;
+    padding: 12px 30px;
+    color: #fff;
+    background-color: $main-color;
+    transition: 0.3s color, background-color;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+    &:hover,
+    &:focus {
+      color: $main-text-color;
+      background-color: $yellow-color;
+    }
+  }
+
+  &__info-wrapper {
+    flex: 1;
+  }
+  &__address {
+    font-style: normal;
+  }
+  &__row-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: gray;
+    text-align: start;
+  }
+  &__info-icon {
+    flex-shrink: 0;
+  }
+  &__row-wrapper:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &__email-link {
+    color: inherit;
+  }
+}

@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+.announcement {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $secondary-color;
+  color: $secondary-text-color;
+  font-size: 14px;
+  border-bottom: 2px solid $main-color;
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .divider {
+    width: 1.5px;
+    background-color: #3f3f3f;
+    height: 20px;
+  }
+  .locales {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    .icon {
+      transition: 0.3s transform;
+    }
+  }
+  .dropdown-btn.active {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 10px);
+    background: white;
+    padding: 0 20px;
+    border-radius: 8px;
+    width: max-content;
+    color: $text-gray-color;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s height, 0.3s padding;
+    li {
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-bottom: 9px;
+      }
+    }
+  }
+  .dropdown-menu.show {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    height: fit-content;
+  }
+}

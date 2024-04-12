@@ -1,0 +1,39 @@
+@use './variables' as *;
+
+@mixin roundedCircle($dimension) {
+  height: #{$dimension}px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+@mixin xs() {
+  @media (min-width: 0px) {
+    @content;
+  }
+}
+@mixin sm() {
+  @media (min-width: #{$sm}px) {
+    @content;
+  }
+}
+@mixin md() {
+  @media (min-width: #{$md}px) {
+    @content;
+  }
+}
+@mixin lg() {
+  @media (min-width: #{$lg}px) {
+    @content;
+  }
+}
+@mixin xl() {
+  @media (min-width: #{$xl}px) {
+    @content;
+  }
+}
+
+@mixin xxl() {
+  @media (min-width: #{$xxl}px) {
+    @content;
+  }
+}

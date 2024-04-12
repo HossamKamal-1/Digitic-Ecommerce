@@ -1,0 +1,193 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $secondary-color;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  &__right-wrapper,
+  &__left-wrapper {
+    flex: 1;
+  }
+  &__left-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  &__mobile-menu-btn {
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    @include xs {
+      display: block;
+    }
+    @include lg {
+      display: none;
+    }
+  }
+  &__logo-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  &__logo-link {
+    font-size: 0;
+  }
+  &__logo {
+    // style goes here
+  }
+  &__search-form-wrapper {
+    flex: 2;
+    @include xs {
+      display: none;
+    }
+    @include lg {
+      display: block;
+    }
+  }
+
+  // right wrapper content styling
+  &__actions-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include xs {
+      gap: 1rem;
+    }
+    @include xl {
+      gap: 1.5rem;
+    }
+  }
+  &__actions-list__item {
+    flex-shrink: 0;
+  }
+  &__action-link,
+  &__action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+  }
+  &__action-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  &__action-icon {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+  }
+  &__action-text-content {
+    color: $secondary-text-color;
+    text-align: center;
+    line-height: 1.5;
+    &:not(.navbar__cart-btn__content) {
+      @include xs {
+        display: none;
+      }
+      @include lg {
+        display: block;
+      }
+    }
+  }
+  &__actions-list__item:has(&__login-btn) {
+    position: relative;
+  }
+  &__login-options-list {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    height: 0;
+    width: 130px;
+    border-radius: 8px;
+    color: $text-gray-color;
+    background-color: $secondary-color;
+
+    overflow: hidden;
+    transition: 0.3s padding, 0.3s height;
+    @include xs {
+      transform: translateX(-35%);
+    }
+    @include lg {
+      transform: translateX(0);
+    }
+    &.show {
+      border: 1px solid gray;
+      height: fit-content;
+    }
+    &__item:not(:last-child) {
+      border-bottom: 1px solid gray;
+    }
+    &__item__link {
+      display: block;
+      padding: 10px;
+      font-weight: 500;
+      color: $secondary-text-color;
+    }
+  }
+
+  &__cart-btn {
+    position: relative;
+  }
+  &__cart-btn__content {
+    // style goes here
+  }
+  &__cart-quantity {
+    background-color: #fff;
+    color: $text-gray-color;
+    @include xs {
+      @include roundedCircle(20);
+      text-align: center;
+      line-height: 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-30%);
+      font-weight: bold;
+    }
+    @include lg {
+      position: static;
+      border-radius: 8px;
+      font-weight: normal;
+      padding: 0 8px;
+      transform: translate(0, 0);
+    }
+  }
+  &__cart-total-price {
+    @include xs {
+      display: none;
+    }
+    @include lg {
+      display: block;
+    }
+  }
+  // mobile menu drawer styles
+  &__mobile-menu-drawer {
+    background-color: $secondary-color;
+    color: white;
+    padding: 0;
+    .collapsable-content {
+      background-color: white;
+      color: black;
+      padding-inline: 10px;
+    }
+    .menu-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .title {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

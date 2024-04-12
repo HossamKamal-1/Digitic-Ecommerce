@@ -1,0 +1,95 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+$button-width: 133px;
+.newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: $main-color;
+  flex-wrap: wrap;
+  @include xs {
+    gap: 1rem;
+  }
+  @include lg {
+    gap: 6rem;
+  }
+  .newsletter-desc {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    @include xs {
+      flex-direction: column;
+    }
+    @include sm {
+      flex-direction: row;
+    }
+    .text {
+      font-weight: 500;
+      color: $secondary-text-color;
+    }
+  }
+  &-form {
+    width: 520px;
+  }
+  .form-group {
+    position: relative;
+    .newsletter-input-wrapper {
+      position: relative;
+      label {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $text-gray-color;
+        font-size: 14px;
+        transition: 0.3s top ease, 0.3s font-size ease;
+      }
+    }
+    .newsletter-input {
+      width: 100%;
+      // TODO: change padding right
+      padding: 15px calc($button-width + 10px) 15px 13px;
+      border: none;
+      border-radius: 8px;
+      outline-color: rgb(35, 35, 174);
+      &:focus {
+        transition: 0.6s all;
+        outline-color: $yellow-color;
+      }
+      &:focus ~ label,
+      &:not(:placeholder-shown) ~ label {
+        top: 10px;
+        font-size: 10px;
+        color: $main-color;
+      }
+    }
+    button {
+      position: absolute;
+      width: $button-width;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $secondary-text-color;
+      background-color: $main-color;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover,
+      &:focus {
+        color: $main-text-color;
+        background-color: $yellow-color;
+      }
+      &:focus {
+        border: none;
+        outline-color: rgb(44, 44, 255);
+      }
+    }
+  }
+}

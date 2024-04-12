@@ -1,0 +1,19 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.3s opacity;
+}
+
+.drawer {
+  height: 100vh;
+  width:  max-content;
+  overflow-y: auto;
+  max-width: 80%;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1000001;
+  background-color: white;
+}

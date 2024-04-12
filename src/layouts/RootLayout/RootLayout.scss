@@ -1,0 +1,22 @@
+@use '../../styles/global' as *;
+@use '../../styles/variables' as *;
+
+.to-top-btn {
+  position: fixed;
+  bottom: -30px;
+  right: 10px;
+  z-index: 200;
+  background-color: $main-color;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s color, 0.3s background-color, 0.2s ease-in bottom;
+  &.show {
+    bottom: 10px;
+  }
+  &:hover {
+    color: $main-text-color;
+    background-color: $yellow-color;
+  }
+}

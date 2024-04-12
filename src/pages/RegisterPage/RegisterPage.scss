@@ -1,0 +1,75 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.register-page {
+  padding-block: 100px;
+  padding-inline: 15px;
+  background-color: $light-bg;
+  &__form-box {
+    padding: 30px;
+    background-color: $white-bg;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 0px rgb(0 0 0 / 28%);
+    max-width: 450px;
+    margin-inline: auto;
+  }
+  &__form-heading {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: $text-gray-color;
+    margin-bottom: 15px;
+  }
+  &__input-group {
+    position: relative;
+  }
+  &__input-group {
+    margin-bottom: 15px;
+  }
+  &__input-field {
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: $light-bg;
+    outline: 1px solid transparent;
+    transition: 0.3s outline;
+  }
+  &__input-field:focus {
+    outline-color: $yellow-color;
+  }
+  &__input-placeholder {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: rgba($color: $text-gray-color, $alpha: 0.8);
+    pointer-events: none;
+    transition: 0.1s;
+  }
+  &__input-field:focus + &__input-placeholder,
+  &__input-field:not(:placeholder-shown) + &__input-placeholder {
+    top: 2px;
+    font-size: 10px;
+  }
+
+  &__register-form-btn {
+    display: block;
+    margin-inline: auto;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 18px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: $main-color;
+    transition: 0.3s color, background-color;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+    &:hover,
+    &:focus-visible {
+      color: $main-text-color;
+      background-color: $yellow-color;
+    }
+  }
+}
