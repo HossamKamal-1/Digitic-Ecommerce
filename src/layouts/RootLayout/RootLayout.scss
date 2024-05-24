@@ -1,5 +1,5 @@
-@use '../../styles/global' as *;
-@use '../../styles/variables' as *;
+@use "/src/styles/global" as *;
+@use "/src/styles/variables" as *;
 
 .to-top-btn {
   position: fixed;

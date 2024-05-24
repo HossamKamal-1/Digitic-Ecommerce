@@ -1,0 +1,33 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
+.searchbar-form {
+  &__content {
+    display: flex;
+    position: relative;
+  }
+  &__search-input {
+    border: 0.5px solid rgba(0, 0, 0, 0.158);
+    transition: 0.3s;
+    width: 100%;
+    padding: 10px {
+      right: 6px;
+      left: 15px;
+    }
+    border-radius: 8px 0 0 8px;
+    &:focus {
+      outline: 1px solid $violet-color;
+    }
+    &::placeholder {
+      color: $text-gray-color;
+    }
+  }
+  button {
+    padding: 8px 12px;
+    background-color: $yellow-color;
+    cursor: pointer;
+    border: none {
+      top-right-radius: 8px;
+      bottom-right-radius: 8px;
+    }
+  }
+}

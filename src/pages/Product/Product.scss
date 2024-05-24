@@ -1,0 +1,159 @@
+@use "/src/styles/variables" as *;
+.product-page {
+  padding-block: 30px;
+  background-color: $light-bg;
+  &__content-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    padding: 25px;
+    background-color: $white-bg;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0px #00000036;
+  }
+  &__imgs-wrapper {
+    flex: 1;
+    --spacing: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+  &__viewed-img-wrapper {
+    border: 1px solid rgba(128, 128, 128, 0.489);
+  }
+  &__viewed-img {
+    width: 100%;
+  }
+  &__other-imgs-wrapper {
+    display: flex;
+    gap: var(--spacing);
+  }
+  &__other-img-wrapper {
+    flex: 1;
+    border: 1px solid rgba(128, 128, 128, 0.489);
+  }
+  &__other-img {
+    width: 100%;
+  }
+  &__info-wrapper {
+    flex: 1;
+  }
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__price-rating-wrapper {
+    padding-block: 15px;
+    border-top: 1px solid rgba(128, 128, 128, 0.212);
+  }
+  &__price-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 5px;
+  }
+  &__price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+    &--old {
+      text-decoration: line-through;
+    }
+    &--new {
+      color: $violet-color;
+    }
+  }
+  &__sale-badge {
+    background-color: $yellow-color;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 16px;
+    width: fit-content;
+    padding: 2px 10px;
+  }
+  &__rating-wrapper {
+    display: flex;
+    gap: 0.3rem;
+    margin-block: 20px;
+  }
+  &__total-rating {
+    color: $text-gray-color;
+  }
+  &__write-review-btn {
+  }
+  &__details-wrapper {
+    padding-block: 15px;
+    border-top: 1px solid rgba(128, 128, 128, 0.212);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  &__brand {
+    color: $text-gray-color;
+  }
+  &__info-label {
+    font-weight: bold;
+    font-size: 17px;
+  }
+  &__tags-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  &__tags-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__tags-list-item {
+    color: $text-gray-color;
+    text-transform: capitalize;
+  }
+  &__sizes-wrapper {
+  }
+  &__size-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    color: $text-gray-color;
+    font-weight: bold;
+    padding: 5px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
+  &__size-radio-input:checked + &__size-label {
+    border-color: blue;
+  }
+  // &__si {
+  //   background-color: red;
+  // }
+  &__colors-wrapper {
+  }
+  &__colors,
+  &__sizes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 10px;
+  }
+  &__quantity-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__quantity-box {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__actions-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}

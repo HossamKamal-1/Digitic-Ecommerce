@@ -1,0 +1,23 @@
+@use "/src/styles/variables" as *;
+.category-filter {
+  &__tag-btns-wrapper {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  &__tag-btn {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: $text-gray-color;
+    background-color: $light-bg;
+    border: none;
+    transition: 0.3s color, background-color;
+    &:hover {
+      background-color: $main-color;
+      color: $secondary-text-color;
+    }
+  }
+}

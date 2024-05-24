@@ -1,0 +1,27 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
+
+.blogs {
+  padding-block: 20px;
+  background-color: $light-bg;
+  &__content-wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+  &__navigation-box-wrapper {
+    align-self: flex-start;
+    position: sticky;
+    top: 130px;
+    display: none;
+    @include md {
+      display: block;
+    }
+  }
+  &__content {
+    padding-block: 10px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+  }
+}

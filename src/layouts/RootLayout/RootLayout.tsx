@@ -1,17 +1,15 @@
-import { Outlet, useLocation } from 'react-router-dom';
-import './RootLayout.scss';
-import { Breadcrumb, Footer, Navbar, NewsLetter } from '../../components';
-import { ModalProvider } from '../../contexts/modalContext';
+import "./RootLayout.scss";
+import { Outlet, useLocation } from "react-router-dom";
+import { NewsLetter } from "@components/ecommerce/sections";
+import { Breadcrumb, Footer, Navbar } from "@components/layout";
 
 function RootLayout() {
   const location = useLocation();
   return (
     <div className="app">
       <Navbar />
-      {location.pathname !== '/' && <Breadcrumb />}
-      <ModalProvider>
-        <Outlet />
-      </ModalProvider>
+      {location.pathname !== "/" && <Breadcrumb />}
+      <Outlet />
       <NewsLetter />
       <Footer />
     </div>

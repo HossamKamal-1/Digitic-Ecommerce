@@ -1,9 +1,9 @@
-import { Blog } from '../components/BlogCard/BlogCard';
-import EcommerceClient from '../services/ecommerceApi';
-import { useAxios } from './useAxios';
+import { TBlog } from "@custom-types/blog";
+import EcommerceClient from "../services/ecommerce";
+import { useAxios } from "./useAxios";
 
 const useBlog = (blogId: string | undefined) => {
-  const { responseData: blog, ...rest } = useAxios<Blog>(
+  const { responseData: blog, ...rest } = useAxios<TBlog>(
     {
       url: `/blogs/${blogId}`,
     },

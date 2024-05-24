@@ -1,0 +1,64 @@
+@use "/src/styles/mixins" as *;
+@use "/src/styles/variables" as *;
+
+.cart-basket {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  &__icon {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+  }
+  &__text-wrapper {
+    color: $secondary-text-color;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  &__quantity {
+    background-color: #fff;
+    color: $text-gray-color;
+    @include xs {
+      position: absolute;
+      text-align: center;
+      line-height: 20px;
+      top: 0;
+      right: 0;
+      transform: translateY(-30%);
+      font-weight: bold;
+      @include roundedCircle(20);
+    }
+  }
+
+  &__price {
+    @include xs {
+      display: none;
+    }
+    @include lg {
+      display: inline-block;
+    }
+  }
+}
+.pump {
+  animation: pump 0.3s ease-in-out;
+}
+@keyframes pump {
+  0% {
+    scale: 1;
+  }
+  20% {
+    scale: 0.8;
+  }
+  30% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 1.7;
+  }
+  100% {
+    scale: 1;
+  }
+}

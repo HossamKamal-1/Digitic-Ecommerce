@@ -1,0 +1,8 @@
+.size-filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  &__item {
+    text-transform: uppercase;
+  }
+}

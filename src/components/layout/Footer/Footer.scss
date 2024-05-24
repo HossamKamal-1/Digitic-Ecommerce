@@ -1,0 +1,124 @@
+@use '/src/styles/mixins' as *;
+@use '/src/styles/variables' as *;
+
+footer {
+  color: $secondary-text-color;
+  background-color: $main-color;
+  .footer-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    .heading {
+      font-weight: 500;
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+    @include md {
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+    @include xl {
+      text-align: start;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+  .contact-address {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .contact-number {
+    margin: 15px 0;
+  }
+  .contact-email-link {
+    color: inherit;
+  }
+  .social-links {
+    margin-top: 25px;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .social-item-link {
+    color: inherit;
+    display: block;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    @include roundedCircle(36);
+    line-height: 30px;
+    text-align: center;
+    .icon {
+      transition: 0.3s color;
+    }
+    &:hover {
+      .icon {
+        color: orange;
+      }
+    }
+  }
+
+  .links__list {
+    // styles goes here
+  }
+  .links-list__item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .links-list__link {
+    color: inherit;
+  }
+  .download__desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    @include lg {
+      max-width: 350px;
+    }
+  }
+  .download__links-wrapper {
+    display: flex;
+    gap: 0.2rem;
+    justify-content: center;
+  }
+  .download__link {
+    width: fit-content;
+  }
+  .footer-copyrights {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    &-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      .copyright {
+        line-height: 1.5;
+        a {
+          color: $yellow-color;
+          font-weight: bold;
+        }
+      }
+      @include xs {
+        justify-content: center;
+        .copyright {
+          text-align: center;
+        }
+      }
+      @include sm {
+        justify-content: space-between;
+      }
+    }
+    .supported-payments-list {
+      display: flex;
+      gap: 1rem;
+    }
+    .supported-payment-item-img {
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

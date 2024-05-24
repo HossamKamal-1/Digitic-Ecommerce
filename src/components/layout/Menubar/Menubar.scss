@@ -1,0 +1,204 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
+// TODO: refactor this css code
+.menubar {
+  background-color: $main-color;
+  .searchbar {
+    padding: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    @include lg {
+      display: none;
+    }
+  }
+  &-menu {
+    font-size: 14px;
+    color: $secondary-text-color;
+    @include xs {
+      display: none;
+    }
+    @include lg {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    > li {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+  .dropdown-nav-link.active {
+    color: $yellow-color !important;
+  }
+  .shopcat-btn {
+    position: relative;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    transition: 0.3s color;
+    .icon {
+      transition: 0.3s transform;
+    }
+    &.active {
+      color: $yellow-color;
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .shopcategory-dropdown-menu,
+  .home-dropdown-menu {
+    top: 100%;
+    background-color: $secondary-color;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    color: $secondary-text-color;
+  }
+  .shopcategory-dropdown-menu {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s;
+  }
+  .shopcategory-dropdown-menu > li {
+    opacity: 0;
+    transition: 0.2s opacity;
+  }
+  .shopcategory-dropdown-menu.show {
+    overflow: visible;
+    max-height: 9999px;
+    > li {
+      opacity: 1;
+      transition-delay: 0.3s;
+    }
+  }
+  .home-dropdown-menu {
+    top: calc(100% + 1px);
+    left: 0;
+    width: max-content;
+    background-color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: 0.3s opacity ease-in-out;
+    pointer-events: none;
+  }
+  .home-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.3s color;
+    .icon {
+      transition: 0.3s transform;
+    }
+  }
+  .dropdown:hover {
+    &:hover .home-link {
+      color: $yellow-color;
+      .icon {
+        transform: rotate(180deg);
+      }
+      + .dropdown-menu {
+        pointer-events: auto;
+        opacity: 1;
+      }
+    }
+  }
+  .nav-link {
+    color: inherit;
+  }
+  .shopcat-btn {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      right: -10px;
+      height: 70%;
+      width: 1.5px;
+      background-color: $text-gray-color;
+    }
+  }
+  .cameras-dropdown-menu {
+    top: 0;
+    display: grid;
+    padding: 20px;
+    gap: 1.5rem;
+    height: 400px;
+    overflow-y: auto;
+    .dropdown-col > .dropdown-nav-link {
+      font-weight: bold;
+    }
+    .dropdown-nav-link {
+      display: block;
+      padding: 10px;
+    }
+    @include lg {
+      height: auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .dropdown-menu .dropdown {
+    @include md {
+      position: static;
+    }
+    @include lg {
+      position: relative;
+    }
+  }
+  .dropdown-menu .dropdown-menu {
+    background-color: #fff;
+    border-radius: 0 4px 4px 0;
+    color: #000;
+    top: 0;
+    left: 100%;
+    width: max-content;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s opacity, 0.5s transform;
+    pointer-events: none;
+  }
+
+  .shopcategory-dropdown-menu {
+    > li:not(:last-child) {
+      border-bottom: 1px solid $main-color;
+    }
+  }
+  .dropdown-nav-link,
+  .dropdown-btn {
+    display: block;
+    font-size: 12px;
+    color: inherit;
+    padding: 20px;
+  }
+  .dropdown-menu .dropdown {
+    .dropdown-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: 0.3s color;
+      .icon {
+        transition: 0.3s transform;
+      }
+    }
+    &:hover {
+      .dropdown-btn {
+        color: $yellow-color;
+        .icon {
+          transform: rotate(180deg);
+        }
+      }
+      .dropdown-menu {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}

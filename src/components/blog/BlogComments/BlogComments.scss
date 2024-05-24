@@ -1,0 +1,35 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
+
+.blog-comments {
+  margin-bottom: 20px;
+  &__comments-count {
+    display: block;
+    font-size: 26px;
+    color: $text-gray-color;
+    margin-bottom: 20px;
+  }
+  &__comment-wrapper {
+    background-color: #f2f2f2;
+    color: $text-gray-color;
+    padding: 20px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  &__comment-wrapper:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  &__comment-content {
+    margin-bottom: 40px;
+  }
+  &__comment-info-wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+  &__comment-author {
+    // style goes here
+  }
+  &__comment-date {
+    // style goes here
+  }
+}

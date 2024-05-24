@@ -1,0 +1,13 @@
+@use "/src/styles/variables" as *;
+.card {
+  background-color: $white-bg;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 15px 1px rgba(135, 134, 134, 0.265);
+  &__heading {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  &__content {
+  }
+}

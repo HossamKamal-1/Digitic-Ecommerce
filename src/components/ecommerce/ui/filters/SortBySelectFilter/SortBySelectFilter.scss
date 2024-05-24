@@ -1,0 +1,13 @@
+@use "/src/styles/variables" as *;
+
+.sort-by-select {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  background-color: $light-bg;
+  color: $text-gray-color;
+  border-radius: 8px;
+  &__option {
+    // styles goes here
+  }
+}

@@ -1,0 +1,50 @@
+@use '/src/styles/mixins' as *;
+@use '/src/styles/variables' as *;
+.slidable-section {
+  background-color: $light-bg;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .heading-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    .heading {
+      color: $main-text-color;
+      font-weight: 500;
+      font-size: 30px;
+    }
+  }
+  .slide-btns-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .slide-btn {
+    background-color: transparent;
+    border: none;
+
+    transition: 0.3s color ease;
+    &:not(:disabled):hover {
+      color: $yellow-color;
+      cursor: pointer;
+    }
+
+    &:focus-visible {
+      color: $yellow-color;
+      outline-color: $yellow-color;
+    }
+  }
+  .items-wrapper {
+    overflow-x: hidden;
+    .slidable-content {
+      display: flex;
+      width: max-content;
+      transition: 0.3s transform ease;
+    }
+  }
+}
+// FIXME: change width or make it dynamic
+.test-item {
+  padding: 10px;
+  width: 300px;
+}

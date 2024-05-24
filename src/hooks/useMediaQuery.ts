@@ -1,23 +1,19 @@
-import { useCallback, useEffect, useState } from 'react';
-
-const useMediaQuery = (mediaQuery: string) => {
-  const isMediaQueryMatchesStateInitializer = useCallback(
-    () => matchMedia(mediaQuery).matches,
-    [mediaQuery]
-  );
-
+import { useEffect, useMemo, useState } from "react";
+type MediaString = `(${"max" | "min"}-width: ${number}px)`;
+const useMediaQuery = (mediaQuery: MediaString) => {
+  const mediaQueryList = useMemo(() => matchMedia(mediaQuery), [mediaQuery]);
   const [isMediaQueryMatches, setIsMediaQueryMatches] = useState(
-    isMediaQueryMatchesStateInitializer
+    mediaQueryList.matches
   );
   useEffect(() => {
-    const resizeHandler = () => {
-      setIsMediaQueryMatches(matchMedia(mediaQuery).matches);
+    const mediaQueryChangeHandler = (e: MediaQueryListEvent) => {
+      setIsMediaQueryMatches(e.matches);
     };
-    window.addEventListener('resize', resizeHandler);
+    mediaQueryList.addEventListener("change", mediaQueryChangeHandler);
     return () => {
-      window.removeEventListener('resize', resizeHandler);
+      mediaQueryList.removeEventListener("change", mediaQueryChangeHandler);
     };
-  }, [mediaQuery]);
+  }, [mediaQueryList]);
   return isMediaQueryMatches;
 };
 export default useMediaQuery;

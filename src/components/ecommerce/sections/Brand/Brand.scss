@@ -1,0 +1,32 @@
+@use '/src/styles/variables' as *;
+@use '/src/styles/mixins' as *;
+
+.brands-section {
+  padding-block: 15px;
+  background-color: $light-bg;
+  &__content {
+    display: flex;
+    gap: 1rem;
+    background-color: $white-bg;
+    padding: 10px;
+    border-radius: 8px;
+    @include xs {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include xl {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+  &__brand-wrapper {
+    // style goes here
+  }
+  &__brand-img {
+    width: 130px;
+    transition: 0.3s transform;
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+}

@@ -13,7 +13,25 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
+    /* Paths */
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
+      "@contexts/*": ["contexts/*"],
+      "@pages/*": ["pages/*"],
+      "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"],
+      "@data/*": ["data/*"],
+      "@assets/*": ["assets/*"],
+      "@store": ["store"],
+      "@store/*": ["store/*"],
+      "@styles/*": ["styles/*"],
+      "@custom-types/*": ["types/*"],
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"],
+      "@validations/*": ["validations/*"]
+    },
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

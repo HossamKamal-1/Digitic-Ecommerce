@@ -1,0 +1,48 @@
+@use '/src/styles/mixins' as *;
+@use '/src/styles/variables' as *;
+.banner-section {
+  background-color: $white-bg;
+  &-content {
+    padding-block: 60px;
+    display: grid;
+    gap: 1rem;
+    @include xs {
+      grid-template-columns: 1fr;
+    }
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include lg {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 233px;
+    }
+    .slider-banner {
+      border-radius: 6px;
+      @include sm {
+        grid-column: span 2;
+      }
+      @include lg {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .category-banner {
+        .title {
+            font-size: 50px;
+        }
+        .desc {
+          @include sm {
+            font-size: 18px;
+            max-width: 260px;
+          }
+        }
+        &:hover img {
+          transform: none;
+        }
+      }
+      .custom-slider {
+        border-radius: 6px;
+        height: 100%;
+      }
+    }
+  }
+}

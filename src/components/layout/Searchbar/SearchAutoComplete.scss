@@ -1,0 +1,34 @@
+@use "/src/styles/variables" as *;
+
+.search-autocomplete {
+  position: absolute;
+  left: 0;
+  top: 120%;
+  width: 100%;
+  height: max-content;
+  z-index: 100000;
+  background-color: $white-bg;
+  border-radius: 8px;
+  box-shadow: 0 0 5px black;
+  padding: 5px 5px 0 0;
+  &__result-list {
+    padding-right: 5px;
+    overflow-y: auto;
+    max-height: 400px;
+  }
+
+  &__result-item {
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    padding: 5px;
+    border-left: 4px solid transparent;
+    transition: 0.3s;
+    &:hover,
+    &.active {
+      background-color: #9e9e9e6b;
+    }
+    &.active {
+      border-left-color: #e91e63;
+    }
+  }
+}

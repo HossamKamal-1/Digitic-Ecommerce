@@ -1,0 +1,36 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/mixins" as *;
+.wishlist-basket {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  &__icon {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+  }
+  &__icon-wrapper {
+    position: relative;
+  }
+  &__count {
+    background-color: #fff;
+    position: absolute;
+    bottom: 5px;
+    right: -2px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    @include roundedCircle(20);
+  }
+  &__text-wrapper {
+    color: $secondary-text-color;
+    text-align: center;
+    line-height: 1.5;
+    @include xs {
+      display: none;
+    }
+    @include lg {
+      display: block;
+    }
+  }
+}

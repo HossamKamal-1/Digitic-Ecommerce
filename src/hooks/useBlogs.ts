@@ -1,11 +1,11 @@
-import { Blog } from '../components/BlogCard/BlogCard';
-import EcommerceClient from '../services/ecommerceApi';
-import { useAxios } from './useAxios';
+import { Blog } from "../components/blog/BlogCard/BlogCard";
+import EcommerceClient from "../services/ecommerce";
+import { useAxios } from "./useAxios";
 
 const useBlogs = () => {
   const { responseData: blogs, ...rest } = useAxios<Blog[]>(
     {
-      url: '/blogs',
+      url: "/blogs",
     },
     EcommerceClient
   );

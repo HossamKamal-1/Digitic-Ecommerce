@@ -1,0 +1,21 @@
+.colors-filter-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  &__item {
+  }
+  &__item-label {
+    cursor: pointer;
+  }
+  &__item-color-holder {
+    display: block;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+  &__item-checkbox-input:checked + &__item-color-holder {
+    border: 2px solid white;
+    outline: 1px solid gray;
+  }
+}
